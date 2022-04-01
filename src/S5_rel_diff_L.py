@@ -1,3 +1,13 @@
+#!/usr/bin/env python3
+"""
+Script reproducing Fig. S5 of the Supporting Information of Paper 
+>Groundwater flow below construction pits and erosion of temporary horizontal layers of silicate grouting<
+by Joris M. Dekker, Thomas Sweijen, Alraune Zech; Hydrogeology Journal
+https://doi.org/10.1007/s10040-020-02246-3
+
+@author: A. Zech
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 from Class_Waterglas import WaterGlassTransport,relative_difference 
@@ -8,7 +18,8 @@ from Class_Waterglas import WaterGlassTransport,relative_difference
 
 ### Create instance of flux settings in construction pit (default parameter) 
 D1 = WaterGlassTransport()
-D1.calculate_fluxes() ### calculate analytical solutions for fluxes within domain
+### calculate analytical solutions for fluxes within domain
+D1.calculate_fluxes() 
 
 rel_diff = np.loadtxt('../data/data_reldiff_L_H1.csv',delimiter = ',', skiprows =1)
 arg = rel_diff[:,0]
@@ -51,12 +62,12 @@ ax.set_xlim([10,80])
 ax.set_ylim([0,8]) 
        
 
-ax.set_ylabel('Relative difference $\epsilon$ [%]')
+ax.set_ylabel('Relative difference $\epsilon\ [\%]$')
 ax.tick_params(axis="both",which="major",labelsize=textsize)
 ax.grid(True)
 ax.text(0.1,0.9,r'$t = 0$', fontsize=textsize,transform=ax.transAxes, bbox=dict(boxstyle='round',facecolor='w'))
 ax.legend(loc = 'upper right',fontsize = textsize)
 
 plt.tight_layout()
-# plt.savefig('../results/S5_rel_diff_L',dpi=300)   
-plt.savefig('../results/S5_rel_diff_L.pdf')   
+# plt.savefig('../results/Fig_S05_rel_diff_L',dpi=300)   
+plt.savefig('../results/Fig_S05_rel_diff_L.pdf')   

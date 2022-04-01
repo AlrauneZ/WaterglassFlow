@@ -1,14 +1,25 @@
+#!/usr/bin/env python3
+"""
+Script reproducing Fig. S3 of the Supporting Information of Paper 
+>Groundwater flow below construction pits and erosion of temporary horizontal layers of silicate grouting<
+by Joris M. Dekker, Thomas Sweijen, Alraune Zech; Hydrogeology Journal
+https://doi.org/10.1007/s10040-020-02246-3
+
+@author: A. Zech
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
-from Class_Waterglas import q_total,q_til
+from Class_Waterglas import WaterGlassTransport,q_total,q_til
 
 ##############################################################################
 ### LOAD DATA AND SPECIFY SETTINGS
 ##############################################################################
 
 ### Create instance of flux settings in construction pit (default parameter) 
-D1 = cw.WaterGlassTransport()
-D1.calculate_fluxes() ### calculate analytical solutions for fluxes within domain
+D1 = WaterGlassTransport()
+### calculate analytical solutions for fluxes within domain
+D1.calculate_fluxes() 
 
 rat_TL = np.arange(0,2.02,0.02)
 q1 = q_total(rat_TL)#,approx = True, c1=c1)    
@@ -45,5 +56,5 @@ plt.xlabel(r'$T/L$',fontsize = textsize)
 plt.ylabel(r'$\hat C \cdot Q(T/L)$',fontsize = textsize)
 plt.tick_params(axis="both",which="major",labelsize=textsize)
 plt.tight_layout()
-# plt.savefig('../results/S3_q_til_approx.png',dpi=300)   
-plt.savefig('../results/S3_q_til_approx.pdf')   
+# plt.savefig('../results/Fig_S03_q_til_approx.png',dpi=300)   
+plt.savefig('../results/Fig_S03_q_til_approx.pdf')   

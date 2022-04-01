@@ -1,3 +1,13 @@
+#!/usr/bin/env python3
+"""
+Script reproducing Fig. S7 of the Supporting Information of Paper 
+>Groundwater flow below construction pits and erosion of temporary horizontal layers of silicate grouting<
+by Joris M. Dekker, Thomas Sweijen, Alraune Zech; Hydrogeology Journal
+https://doi.org/10.1007/s10040-020-02246-3
+
+@author: A. Zech
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 from Class_Waterglas import WaterGlassTransport,relative_difference 
@@ -57,5 +67,5 @@ ax.tick_params(axis="both",which="major",labelsize=textsize)
 ax.grid(True)
 
 plt.tight_layout()
-# plt.savefig('../results/S7_rel_diff_D',dpi=300)   
-plt.savefig('../results/S7_rel_diff_D.pdf')   
+# plt.savefig('../results/Fig_S07_rel_diff_D',dpi=300)   
+plt.savefig('../results/Fig_S07_rel_diff_D.pdf')   

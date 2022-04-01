@@ -1,3 +1,13 @@
+#!/usr/bin/env python3
+"""
+Script reproducing Fig. S1 of the Supporting Information of Paper 
+>Groundwater flow below construction pits and erosion of temporary horizontal layers of silicate grouting<
+by Joris M. Dekker, Thomas Sweijen, Alraune Zech; Hydrogeology Journal
+https://doi.org/10.1007/s10040-020-02246-3
+
+@author: A. Zech
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 

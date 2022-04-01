@@ -1,3 +1,13 @@
+#!/usr/bin/env python3
+"""
+Script reproducing Fig. S2 of the Supporting Information of Paper 
+>Groundwater flow below construction pits and erosion of temporary horizontal layers of silicate grouting<
+by Joris M. Dekker, Thomas Sweijen, Alraune Zech; Hydrogeology Journal
+https://doi.org/10.1007/s10040-020-02246-3
+
+@author: A. Zech
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import leastsq
@@ -42,5 +52,5 @@ plt.ylabel(r'$\hat C \cdot Q_\textup{total}$',fontsize = textsize)
 plt.grid(True)
 plt.tick_params(axis="both",which="major",labelsize=textsize)
 plt.tight_layout()
-# plt.savefig('../results/Fig04_q_trans.png',dpi=300)   
+# plt.savefig('../results/Fig_S02_q_total_approx.png',dpi=300)   
 plt.savefig('../results/Fig_S02_q_total_approx.pdf')   

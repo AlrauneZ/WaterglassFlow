@@ -1,3 +1,13 @@
+#!/usr/bin/env python3
+"""
+Script reproducing Fig. 8 of the Paper 
+>Groundwater flow below construction pits and erosion of temporary horizontal layers of silicate grouting<
+by Joris M. Dekker, Thomas Sweijen, Alraune Zech; Hydrogeology Journal
+https://doi.org/10.1007/s10040-020-02246-3
+
+@author: A. Zech
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 from Class_Waterglas import WaterGlassTransport,q_total_trans,q_til_trans
@@ -8,7 +18,8 @@ from Class_Waterglas import WaterGlassTransport,q_total_trans,q_til_trans
 
 ### Create instance of flux settings in construction pit (default parameter) 
 D1 = WaterGlassTransport()
-D1.calculate_fluxes() ### calculate analytical solutions for fluxes within domain
+### calculate analytical solutions for fluxes within domain
+D1.calculate_fluxes() 
 
 tau_range = [0.001,0.01,0.1,1]
 tau0 =D1.settings['k_til_0'] /  D1.kf
@@ -25,8 +36,6 @@ lw = 3
 textsize = 10
 abc = ['a','b','c','d']
 
-# import ufz
-# cc3 = ufz.get_brewer('Greens9', rgb=True,reverse=True)[::2]
 cc3 = ['darkgreen','forestgreen','limegreen','lightgreen']
 
 plt.figure(figsize=[7.5,5.4])

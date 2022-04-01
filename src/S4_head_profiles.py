@@ -1,3 +1,13 @@
+#!/usr/bin/env python3
+"""
+Script reproducing Fig. S4 of the Supporting Information of Paper 
+>Groundwater flow below construction pits and erosion of temporary horizontal layers of silicate grouting<
+by Joris M. Dekker, Thomas Sweijen, Alraune Zech; Hydrogeology Journal
+https://doi.org/10.1007/s10040-020-02246-3
+
+@author: A. Zech
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -34,5 +44,5 @@ ax.legend(loc = 'upper right',fontsize = textsize)
 
 plt.tick_params(axis="both",which="major",labelsize=textsize)
 plt.tight_layout()
-# plt.savefig('../results/Fig_S4_head_profiles.png',dpi=300)   
-plt.savefig('../results/Fig_S4_head_profiles.pdf')   
+# plt.savefig('../results/Fig_S04_head_profiles.png',dpi=300)   
+plt.savefig('../results/Fig_S04_head_profiles.pdf')   

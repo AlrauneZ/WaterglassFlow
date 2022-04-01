@@ -1,7 +1,16 @@
+#!/usr/bin/env python3
+"""
+Script reproducing Fig. 4 of the Paper 
+>Groundwater flow below construction pits and erosion of temporary horizontal layers of silicate grouting<
+by Joris M. Dekker, Thomas Sweijen, Alraune Zech; Hydrogeology Journal
+https://doi.org/10.1007/s10040-020-02246-3
+
+@author: A. Zech
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
-from Class_SimWaterglas import Sim_WaterGlassTransport
-from Class_Waterglas import WaterGlassTransport
+from Class_Waterglas import WaterGlassTransport,Sim_WaterGlassTransport
 
 ##############################################################################
 ### LOAD DATA
@@ -15,7 +24,8 @@ tau = np.logspace(np.log10(Sim1.tau0),np.log10(Sim1.tau[-1]),len(Sim1.tau))
 
 ### Create instance of flux settings in construction pit (default parameter) 
 D1 = WaterGlassTransport()
-D1.calculate_fluxes() ### calculate analytical solutions for fluxes within domain
+### calculate analytical solutions for fluxes within domain
+D1.calculate_fluxes() 
 
 ##############################################################################
 ### PLOTTING RESULTS
